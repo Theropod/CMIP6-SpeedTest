@@ -9,4 +9,4 @@ A download speed test for cmip6 data nodes, based on librespeed, with telemetry 
 ### Why is this site in http?
 - Because most of the cmip6 data nodes are http(Although it is safer in https, it's impossible to force all of the nodes to upgrade). This speed test requires the browser to request those http resources, if this site is in https, the request would be blocked.
 ## Deploy and modification
-See https://github.com/librespeed/speedtest for detailed dedeployment instruction.
+See https://github.com/librespeed/speedtest for detailed deployment instruction.
