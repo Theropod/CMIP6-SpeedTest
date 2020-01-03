@@ -50,7 +50,7 @@
 
 		// special rules for those thredds server that dont support https
 		function specialThreddsRule(nodename, url) {
-			if (nodename.includes('esg.lasg.ac.cn') || nodename.includes('esgf-data2.diasjp.net') || nodename.includes('esg.camscma.cn')|| nodename.includes('cmip.bcc.cma.cn')|| nodename.includes('esg-cccr.tropmet.res.in')|| nodename.includes('esgf-data.ucar.edu')|| nodename.includes('cmip.fio.org.cn')|| nodename.includes('esgf-node2.cmcc.it')) {
+			if (nodename.includes('esg.lasg.ac.cn') || nodename.includes('esgf-data2.diasjp.net') || nodename.includes('esg.camscma.cn') || nodename.includes('cmip.bcc.cma.cn') || nodename.includes('esg-cccr.tropmet.res.in') || nodename.includes('esgf-data.ucar.edu') || nodename.includes('cmip.fio.org.cn') || nodename.includes('esgf-node2.cmcc.it')) {
 				return 'http:' + url.split(':')[1];
 			}
 			else return 'https:' + url.split(':')[1];
@@ -189,7 +189,7 @@
 									cell2.innerHTML = resultJson["Ping"];
 									cell3.innerHTML = resultJson["Jitter"];
 									cell4.innerHTML = resultJson["DL"];
-									
+
 									cell5.innerHTML = '<input type=\"text\" value=\"' + resultURL + '\" id=\"resultsURL\" readonly=\"readonly\" onclick = \"this.select();this.focus();this.select();document.execCommand(\'copy\');alert(\'Link copied\')\" />';
 									I("resultArea").style.display = "";
 								});
@@ -257,6 +257,7 @@
 
 										var server = s._availableServerList[currentserver];
 										if (currentserver + 1 == s._availableServerList.length) {
+											alert('test all compelete! ' + s._availableServerList + ' nodes tested!');
 											return;
 										}
 										else {
@@ -630,7 +631,7 @@
 	<h1>CMIP6 Data Nodes Speed Test</h1>
 	<div id="loading" class="visible">
 		<p id="message"><span class="loadCircle"></span>Testing CMIP6 Data Nodes Availability...</p>
-		<a href='tutorial.pdf'  target="_blank" > Please Check the tutorial pdf</a>
+		<a href='tutorial.html' target="_blank"> Please Check the tutorial</a>
 	</div>
 	<div id="testWrapper" class="hidden">
 		<div id="startStopBtn" onclick="startStop()"></div>
@@ -684,12 +685,28 @@
 		</div>
 		<img src='logo.png'></img>
 		<a href="https://github.com/Theropod/CMIP6-SpeedTest" style="display:block">Source code</a>
-		<a href='tutorial.pdf'  target="_blank" > Tutorial</a>
+		<a href='tutorial.html' target="_blank"> Tutorial</a>
 		<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy, Data Source and Support</a>
 	</div>
 	<div id="privacyPolicy" style="display:none">
+		<h2>What is CMIP6?</h2>
+		<p>
+			The <a href="https://www.wcrp-climate.org/wgcm-cmip">Coupled Model Intercomparison Project</a>, which began
+			in 1995 under the auspices of the <a href="https://www.wcrp-climate.org/about-wcrp/wcrp-overview">World
+				Climate Research Programme (WCRP)</a>, is now in its sixth phase (CMIP6). CMIP6 coordinates somewhat
+			independent <a href="https://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">model
+				intercomparison activities and their experiments</a> which have adopted a common infrastructure for
+			collecting, organizing, and distributing output from models performing common sets of experiments. The
+			simulation data produced by models under previous phases of CMIP have been used in thousands of research
+			papers (some of which are listed <a href="https://cmip-publications.llnl.gov/view/CMIP5/">here</a>), and the
+			multi-model results provide some perspective on errors and uncertainty in model simulations. This
+			information has proved invaluable in preparing high profile reports assessing our understanding of climate
+			and climate change (e.g., the <a href="http://www.ipcc.ch/">IPCC Assessment Reports</a>).</p>
 		<h2>About this test</h2>
-		<p>This webpage tests your download speed from cmip6 data nodes, and is configured with telemetry enabled.</p>
+		<p>Compared to CMIP5(~2PB), 40-60 PB of model output is expected for CMIP6, therefore downloading speed strongly
+			affects the efficiency of model intercomparison research</p>
+		<p>This webpage tests your download speed from all available cmip6 data nodes, and is configured with telemetry
+			enabled.</p>
 		<h4>What data we collect</h4>
 		<p>
 			At the end of the test, the following data is collected and stored:
@@ -725,7 +742,7 @@
 			Contact this email address for all deletion requests: <a
 				href="mailto:liuyufu18@mails.tsinghua.edu.cn">liuyufu18@mails.tsinghua.edu.cn</a>.
 		</p>
-		<h4>About the test</h4>
+		<h4>About the test datasource</h4>
 		<p>
 			This site tests your speed to download a file from all available cmip6 data nodes in browser:
 			<ul>

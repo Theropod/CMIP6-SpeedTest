@@ -170,7 +170,7 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "1579",
-        "dl_url": "http://esg.camscma.cn/thredds/fileServer/cmip6/CMIP6/CMIP/CAMS/CAMS-CSM1-0/1pctCO2/r1i1p1f1/Amon/cli/gn/v20190708/cli_Amon_CAMS-CSM1-0_1pctCO2_r1i1p1f1_gn_315001-316412.nc"
+        "dl_url": "http://esg.camscma.cn/thredds/fileServer/cmip6/CMIP6/CMIP/CAMS/CAMS-CSM1-0/abrupt-4xCO2/r1i1p1f1/SImon/siconca/gn/v20190708/siconca_SImon_CAMS-CSM1-0_abrupt-4xCO2_r1i1p1f1_gn_303001-317912.nc"
     },
     {
         "node_name": "esg.lasg.ac.cn",
