@@ -5,7 +5,7 @@ source /home/ubuntu/miniconda3/bin/activate base
 sudo -- bash -c 'zcat /var/log/apache2/access.log.*.gz | goaccess /var/log/apache2/access.log /var/log/apache2/access.log.1 - -o /var/www/html/report.html --log-format=COMBINED'
 # export csv file from mysql database speedtest, table speedtest_users: every hour
 sudo -- bash -c 'rm /var/lib/mysql-files/*.csv' # delete all existing file in mysql output directory
-mysql -uroot -p'dessbai123DESSBAI!@#' -Dspeedtest</home/ubuntu/CMIP6-SpeedTest/speedtest_result_export.sql
+mysql -uroot -p'mypass' -Dmydatabase</home/ubuntu/CMIP6-SpeedTest/resources/result-update/speedtest_result_export.sql
 filename=$(sudo bash -c  'filename= ls -tr1 /var/lib/mysql-files| tail -1') # only select the latest file
 sudo rm /home/ubuntu/CMIP6-SpeedTest/*.csv
 sudo cp /var/lib/mysql-files/$filename ~/CMIP6-SpeedTest #copy it from mysql output directory to working directory

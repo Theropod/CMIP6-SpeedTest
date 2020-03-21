@@ -33,7 +33,7 @@
     }
 
     .rendered_html img, .rendered_html svg{
-      max-width: 40%;
+      max-width: 40%!important;
     }
 
     .logo {
@@ -78,7 +78,7 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
   <script>
     $(function () {
-      $("#resultcontent").load("Speedtest_Result.html");
+      $("#resultcontent").load("./resources/result-update/Speedtest_Result.html");
     });
   </script>
 </head>
@@ -93,6 +93,7 @@
   </div>
   <div id="resultcontent">
   </div>
+  <a href='https://www.tsinghua.edu.cn/publish/ess/' target="_blank"> <img src='./resources/tutorial/logo.png'></img></a>
   </body>
 
 </html>
