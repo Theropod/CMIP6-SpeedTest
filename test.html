@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+	<!-- because some of the data nodes are http, we have to force https to avoid requests blocked by browser
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="speedtest.js"></script>
+	<script type="text/javascript">
+		function I(i) { return document.getElementById(i); }
+
+		var SPEEDTEST_SERVERS = []
+		//LIST OF TEST SERVERS. See documentation for details if needed
+		// test server
+		// var SPEEDTEST_SERVERS = [
+		// 	{	//this is my demo server, remove it
+		// 		name: "ESGF DATA NODE AIMS3 LLNL GOV", //user friendly name for the server
+		// 		server: "aims3.llnl.gov", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
+		// 		dlURL: "https://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/n2o/gn/v20190621/n2o_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc",  //path to download test on this server (garbage.php or replacement)
+		// 		// ulURL: "/",
+		// 		pingURL: "https://aims3.llnl.gov/",  //path to ping/jitter test on this server (empty.php or replacement)
+		// 		getIpURL: "http://speedtest.theropod.tk/backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
+		// 	},
+		// 	{	//this is my demo server, remove it
+		// 		name: "ESGF DATA NODE BCC CMA CN",
+		// 		server: "cmip.bcc.cma.cn",
+		// 		dlURL: "http://cmip.bcc.cma.cn/thredds/fileServer/cmip6_data/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/n2o/gn/v20190621/n2o_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc",
+		// 		// ulURL: "/",
+		// 		pingURL: "https://cmip.bcc.cma.cn",
+		// 		getIpURL: "http://speedtest.theropod.tk/backend/getIP.php"
+		// 	},
+		// 	{	//this is my demo server, remove it
+		// 		name: "ESGF DATA NODE TSINGHUA",
+		// 		server: "cmip.dess.tsinghua.edu.cn",
+		// 		dlURL: "https://cmip.dess.tsinghua.edu.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/THU/CIESM/piControl/r1i1p1f1/Amon/cli/gr/v20191202/cli_Amon_CIESM_piControl_r1i1p1f1_gr_040101-045012.nc",
+		// 		// ulURL: "/",
+		// 		pingURL: "https://cmip.dess.tsinghua.edu.cn/",
+		// 		getIpURL: "http://speedtest.theropod.tk/backend/getIP.php"
+		// 	},
+		// 	//add other servers here, comma separated
+		// ];
+
+		// CMIP NODES ACCESSBILITY INFORMATION ON MAP(todo)
+
+		//INITIALIZE SPEEDTEST
+		var s = new Speedtest(); //create speedtest object
+		s.setParameter("telemetry_level", "basic"); //enable telemetry
+
+		// special rules for those thredds server that dont support https
+		function specialThreddsRule(nodename, url) {
+			if (nodename.includes('esg.lasg.ac.cn') || nodename.includes('esgf-data2.diasjp.net') || nodename.includes('esg.camscma.cn') || nodename.includes('cmip.bcc.cma.cn') || nodename.includes('esg-cccr.tropmet.res.in') || nodename.includes('esgf-data.ucar.edu') || nodename.includes('cmip.fio.org.cn') || nodename.includes('esgf-node2.cmcc.it')|| nodename.includes('esgf.rcec.sinica.edu.tw')) {
+				return 'http:' + url.split(':')[1];
+			}
+			else return 'https:' + url.split(':')[1];
+		};
+
+
+		//SERVER AUTO SELECTION
+		function initServers() {
+			var DATANODES = fetch('/backend/getESGFDataNodes.json').then(function (response) {
+				return response.json();
+			}).then(function (nodes) {
+				console.log(nodes);
+				nodes.forEach(function (node) {
+					var nodeinfo = {
+						name: node['node_name'],
+						server: node['node_name'],
+						dlURL: specialThreddsRule(node['node_name'], node['dl_url']),
+						// data node thredds server catalog page. Default root url is empty
+						pingURL: specialThreddsRule(node['node_name'], node['dl_url']).split('fileServer')[0] + 'catalog/catalog.html',
+						// pingURL: 'https:'+node['dl_url'].split(':')[1].split('fileServer')[0]+'catalog/catalog.html',
+						getIpURL: "/backend/getIP.php",
+						loc: (node['node_isp_info'] == null) ? "no info" : node['node_isp_info']['loc'],
+					}
+					SPEEDTEST_SERVERS.push(nodeinfo);
+				});
+				s.addTestPoints(SPEEDTEST_SERVERS); //add list of servers
+				s.selectServer(function (server) {
+					if (server != null) { //at least 1 server is available
+						I("loading").className = "hidden"; //hide loading message
+						//populate server list for manual selection
+						for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+							if (SPEEDTEST_SERVERS[i].pingT == -1) continue;
+							var option = document.createElement("option");
+							option.value = i;
+							option.textContent = SPEEDTEST_SERVERS[i].name;
+							if (SPEEDTEST_SERVERS[i] === server) option.selected = true;
+							I("server").appendChild(option);
+							s._availableServerList.push(SPEEDTEST_SERVERS[i]);
+						}
+						//show test UI
+						I("testWrapper").className = "visible";
+						initUI();
+					} else { //no servers are available, the test cannot proceed
+						I("message").innerHTML = "Sorry! Failed to access the CMIP6 data nodes. You might need to check the tutorial document to enable 'Allow CORS' plugin in Chrome.";
+					}
+				});
+			});
+		}
+
+		var meterBk = /Trident.*rv:(\d+\.\d+)/i.test(navigator.userAgent) ? "#EAEAEA" : "#80808040";
+		var dlColor = "#6060AA",
+			ulColor = "#616161";
+		var progColor = meterBk;
+
+		//CODE FOR GAUGES
+		function drawMeter(c, amount, bk, fg, progress, prog) {
+			var ctx = c.getContext("2d");
+			var dp = window.devicePixelRatio || 1;
+			var cw = c.clientWidth * dp, ch = c.clientHeight * dp;
+			var sizScale = ch * 0.0055;
+			if (c.width == cw && c.height == ch) {
+				ctx.clearRect(0, 0, cw, ch);
+			} else {
+				c.width = cw;
+				c.height = ch;
+			}
+			ctx.beginPath();
+			ctx.strokeStyle = bk;
+			ctx.lineWidth = 12 * sizScale;
+			ctx.arc(c.width / 2, c.height - 58 * sizScale, c.height / 1.8 - ctx.lineWidth, -Math.PI * 1.1, Math.PI * 0.1);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.strokeStyle = fg;
+			ctx.lineWidth = 12 * sizScale;
+			ctx.arc(c.width / 2, c.height - 58 * sizScale, c.height / 1.8 - ctx.lineWidth, -Math.PI * 1.1, amount * Math.PI * 1.2 - Math.PI * 1.1);
+			ctx.stroke();
+			if (typeof progress !== "undefined") {
+				ctx.fillStyle = prog;
+				ctx.fillRect(c.width * 0.3, c.height - 16 * sizScale, c.width * 0.4 * progress, 4 * sizScale);
+			}
+		}
+		function mbpsToAmount(s) {
+			return 1 - (1 / (Math.pow(1.3, Math.sqrt(s))));
+		}
+		function format(d) {
+			d = Number(d);
+			if (d < 10) return d.toFixed(2);
+			if (d < 100) return d.toFixed(1);
+			return d.toFixed(0);
+		}
+
+		//UI CODE
+		var uiData = null;
+		function startStop() {
+			if (s.getState() == 3) {
+				//speedtest is running, abort
+				s.abort();
+				data = null;
+				I("startStopBtn").className = "";
+				I("server").disabled = false;
+				initUI();
+			} else {
+				//test is not running, begin
+				I("startStopBtn").className = "running";
+				// I("resultArea").style.display = "none";
+				I("server").disabled = true;
+				s.onupdate = function (data) {
+					uiData = data;
+				};
+				s.onend = function (aborted) {
+					I("startStopBtn").className = "";
+					I("server").disabled = false;
+					updateUI(true);
+					if (!aborted) {
+						//if testId is present, show sharing panel, otherwise do nothing
+						try {
+							var testId = uiData.testId;
+							if (testId != null) {
+								var resultURL = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/results/?id=" + testId;
+								var testResult = fetch(resultURL).then(function (response) {
+									return response.json();
+								}).then(function (resultJson) {
+									var table = I("testResultTable");
+									// Create an empty <tr> element and add it to the 1st position of the table:
+									var row = table.insertRow(1);
+									// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+									var cell0 = row.insertCell(0);
+									var cell1 = row.insertCell(1);
+									var cell2 = row.insertCell(2);
+									var cell3 = row.insertCell(3);
+									var cell4 = row.insertCell(4);
+									var cell5 = row.insertCell(5);
+									// cell value
+									cell0.innerHTML = resultJson["OrigIP"];
+									cell1.innerHTML = s._selectedServer.name;
+									cell2.innerHTML = resultJson["Ping"];
+									cell3.innerHTML = resultJson["Jitter"];
+									cell4.innerHTML = resultJson["DL"];
+
+									cell5.innerHTML = '<input type=\"text\" value=\"' + resultURL + '\" id=\"resultsURL\" readonly=\"readonly\" onclick = \"this.select();this.focus();this.select();document.execCommand(\'copy\');alert(\'Link copied\')\" style=\"width: 98%\" />';
+									I("resultArea").style.display = "";
+								});
+							}
+						} catch (e) { }
+					}
+				};
+				s.start();
+			}
+		}
+		function startStopAll() {
+			if (s.getState() == 3) {
+				//speedtest is running, abort
+				s.abort();
+				data = null;
+				I("startStopAllBtn").className = "";
+				I("server").disabled = false;
+				initUI();
+			} else {
+				//test is not running, begin
+				I("startStopAllBtn").className = "running";
+				// I("resultArea").style.display = "none";
+				I("server").disabled = true;
+				var currentserver = 0;
+				s.setSelectedServer(s._serverList[0]);
+				I("server").options[0].selected = true;
+				var nextTestServer = function () {
+					I("startStopAllBtn").className = "running";
+					// I("resultArea").style.display = "none";
+					I("server").disabled = true;
+					s.onupdate = function (data) {
+						uiData = data;
+					};
+					s.onend = function (aborted) {
+						I("startStopAllBtn").className = "";
+						I("server").disabled = false;
+						updateUI(true);
+						if (!aborted) {
+							//if testId is present, show sharing panel, otherwise do nothing
+							try {
+								var testId = uiData.testId;
+								if (testId != null) {
+									var resultURL = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/results/?id=" + testId;
+									var testResult = fetch(resultURL).then(function (response) {
+										return response.json();
+									}).then(function (resultJson) {
+										var table = I("testResultTable");
+										// Create an empty <tr> element and add it to the 1st position of the table:
+										var row = table.insertRow(1);
+										// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+										var cell0 = row.insertCell(0);
+										var cell1 = row.insertCell(1);
+										var cell2 = row.insertCell(2);
+										var cell3 = row.insertCell(3);
+										var cell4 = row.insertCell(4);
+										var cell5 = row.insertCell(5);
+										// cell value
+										cell0.innerHTML = resultJson["OrigIP"];
+										cell1.innerHTML = s._selectedServer.name;
+										cell2.innerHTML = resultJson["Ping"];
+										cell3.innerHTML = resultJson["Jitter"];
+										cell4.innerHTML = resultJson["DL"];
+										cell5.innerHTML = '<input type=\"text\" value=\"' + resultURL + '\" id=\"resultsURL\" readonly=\"readonly\" onclick = \"this.select();this.focus();this.select();document.execCommand(\'copy\');alert(\'Link copied\')\" style=\"width: 98%\" />';
+										I("resultArea").style.display = "";
+
+										var server = s._availableServerList[currentserver];
+										if (currentserver + 1 == s._availableServerList.length) {
+											alert('test all compelete! ' + s._availableServerList.length + ' nodes tested!');
+											return;
+										}
+										else {
+											currentserver++;
+											if (server.pingT == -1) {
+												currentserver++;
+											}
+											server = s._availableServerList[currentserver];
+											s.setSelectedServer(server);
+											I("server").options[currentserver].selected = true;
+											I("startStopAllBtn").className = "running";
+											I("server").disabled = true;
+											nextTestServer();
+											s.start();
+										}
+									});
+								}
+							} catch (e) { }
+						}
+					};
+				};
+				nextTestServer();
+				s.start();
+			}
+		}
+		//this function reads the data sent back by the test and updates the UI
+		function updateUI(forced) {
+			if (!forced && s.getState() != 3) return;
+			if (uiData == null) return;
+			var status = uiData.testState;
+			I("ip").textContent = uiData.clientIp;
+			I("dlText").textContent = (status == 1 && uiData.dlStatus == 0) ? "..." : format(uiData.dlStatus);
+			drawMeter(I("dlMeter"), mbpsToAmount(Number(uiData.dlStatus * (status == 1 ? oscillate() : 1))), meterBk, dlColor, Number(uiData.dlProgress), progColor);
+			// No ul test for cmip nodes!!
+			// I("ulText").textContent = (status == 3 && uiData.ulStatus == 0) ? "..." : format(uiData.ulStatus);
+			// drawMeter(I("ulMeter"), mbpsToAmount(Number(uiData.ulStatus * (status == 3 ? oscillate() : 1))), meterBk, ulColor, Number(uiData.ulProgress), progColor);
+			I("pingText").textContent = format(uiData.pingStatus);
+			I("jitText").textContent = format(uiData.jitterStatus);
+		}
+		function oscillate() {
+			return 1 + 0.02 * Math.sin(Date.now() / 100);
+		}
+		//update the UI every frame
+		window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || (function (callback, element) { setTimeout(callback, 1000 / 60); });
+		function frame() {
+			requestAnimationFrame(frame);
+			updateUI();
+		}
+		frame(); //start frame loop
+		//function to (re)initialize UI
+		function initUI() {
+			drawMeter(I("dlMeter"), 0, meterBk, dlColor, 0);
+			// no ul test for cmip nodes
+			// drawMeter(I("ulMeter"), 0, meterBk, ulColor, 0);
+			I("dlText").textContent = "";
+			I("ulText").textContent = "";
+			I("pingText").textContent = "";
+			I("jitText").textContent = "";
+			I("ip").textContent = "";
+		}
+	</script>
+	<style type="text/css">
+		html,
+		body {
+			border: none;
+			padding: 0;
+			margin: 0;
+			background: #FFFFFF;
+			color: #202020;
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+
+		body {
+			text-align: center;
+			font-family: "Roboto", sans-serif;
+		}
+
+		h1 {
+			color: #404040;
+		}
+
+		#loading {
+			background-color: #FFFFFF;
+			color: #404040;
+			text-align: center;
+		}
+
+		span.loadCircle {
+			display: inline-block;
+			width: 2em;
+			height: 2em;
+			vertical-align: middle;
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAP1BMVEUAAAB2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZyFzwnAAAAFHRSTlMAEvRFvX406baecwbf0casimhSHyiwmqgAAADpSURBVHja7dbJbQMxAENRahnN5lkc//5rDRAkDeRgHszXgACJoKiIiIiIiIiIiIiIiIiIiIj4HHspsrpAVhdVVguzrA4OWc10WcEqpwKbnBo0OU1Q5NSpsoJFTgOecrrdEag85DRgktNqfoEdTjnd7hrEHMEJvmRUYJbTYk5Agy6nau6Abp5Cm7mDBtRdPi9gyKdU7w4p1fsLvyqs8hl4z9/w3n/Hmr9WoQ65lAU4d7lMYOz//QboRR5jBZibLMZdAR6O/Vfa1PlxNr3XdS3HzK/HVPRu/KnLs8iAOh993VpRRERERMT/fAN60wwWaVyWwAAAAABJRU5ErkJggg==');
+			background-size: 2em 2em;
+			margin-right: 0.5em;
+			animation: spin 0.6s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(359deg);
+			}
+		}
+
+		#startStopBtn {
+			display: inline-block;
+			margin: 0 auto;
+			color: #6060AA;
+			background-color: rgba(0, 0, 0, 0);
+			border: 0.15em solid #6060FF;
+			border-radius: 0.3em;
+			transition: all 0.3s;
+			box-sizing: border-box;
+			width: 8em;
+			height: 3em;
+			line-height: 2.7em;
+			cursor: pointer;
+			box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), inset 0 0 0 rgba(0, 0, 0, 0.1);
+		}
+
+		#startStopBtn:hover {
+			box-shadow: 0 0 2em rgba(0, 0, 0, 0.1), inset 0 0 1em rgba(0, 0, 0, 0.1);
+		}
+
+		#startStopBtn.running {
+			background-color: #FF3030;
+			border-color: #FF6060;
+			color: #FFFFFF;
+		}
+
+		#startStopBtn:before {
+			content: "Test Selected";
+		}
+
+		#startStopBtn.running:before {
+			content: "Abort";
+		}
+
+		#startStopAllBtn {
+			display: inline-block;
+			margin: 0 auto;
+			color: #6060AA;
+			background-color: rgba(0, 0, 0, 0);
+			border: 0.15em solid #6060FF;
+			border-radius: 0.3em;
+			transition: all 0.3s;
+			box-sizing: border-box;
+			width: 8em;
+			height: 3em;
+			line-height: 2.7em;
+			cursor: pointer;
+			box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), inset 0 0 0 rgba(0, 0, 0, 0.1);
+		}
+
+		#startStopAllBtn:hover {
+			box-shadow: 0 0 2em rgba(0, 0, 0, 0.1), inset 0 0 1em rgba(0, 0, 0, 0.1);
+		}
+
+		#startStopAllBtn.running {
+			background-color: #FF3030;
+			border-color: #FF6060;
+			color: #FFFFFF;
+		}
+
+		#startStopAllBtn:before {
+			content: "Test All";
+		}
+
+		#startStopAllBtn.running:before {
+			content: "Abort";
+		}
+
+		#serverArea {
+			margin-top: 1em;
+		}
+
+		#server {
+			font-size: 1em;
+			padding: 0.2em;
+		}
+
+		#test {
+			margin-top: 2em;
+			margin-bottom: 12em;
+		}
+
+		div.testArea {
+			display: inline-block;
+			width: 16em;
+			height: 12.5em;
+			position: relative;
+			box-sizing: border-box;
+		}
+
+		div.testArea2 {
+			display: inline-block;
+			width: 14em;
+			height: 7em;
+			position: relative;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		div.testArea div.testName {
+			position: absolute;
+			top: 0.1em;
+			left: 0;
+			width: 100%;
+			font-size: 1.4em;
+			z-index: 9;
+		}
+
+		div.testArea2 div.testName {
+			display: block;
+			text-align: center;
+			font-size: 1.4em;
+		}
+
+		div.testArea div.meterText {
+			position: absolute;
+			bottom: 1.55em;
+			left: 0;
+			width: 100%;
+			font-size: 2.5em;
+			z-index: 9;
+		}
+
+		div.testArea2 div.meterText {
+			display: inline-block;
+			font-size: 2.5em;
+		}
+
+		div.meterText:empty:before {
+			content: "0.00";
+		}
+
+		div.testArea div.unit {
+			position: absolute;
+			bottom: 2em;
+			left: 0;
+			width: 100%;
+			z-index: 9;
+		}
+
+		div.testArea2 div.unit {
+			display: inline-block;
+		}
+
+		div.testArea canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+
+		div.testGroup {
+			display: block;
+			margin: 0 auto;
+		}
+
+		#resultArea {
+			width: 95%;
+			max-width: 60em;
+			margin: 0 auto;
+			margin-top: 2em;
+		}
+
+		#resultArea>* {
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 0.25em 0;
+		}
+
+		table#testResultTable {
+			font-family: verdana, arial, sans-serif;
+			font-size: 11px;
+			color: #333333;
+			border-width: 1px;
+			border-color: #666666;
+			border-collapse: collapse;
+			border-width: 0px;
+		}
+
+		table#testResultTable th {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #666666;
+			background-color: #dedede;
+		}
+
+		table#testResultTable td {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #666666;
+			background-color: #ffffff;
+		}
+
+		#privacyPolicy {
+			position: fixed;
+			top: 2em;
+			bottom: 2em;
+			left: 2em;
+			right: 2em;
+			overflow-y: auto;
+			width: auto;
+			height: auto;
+			box-shadow: 0 0 3em 1em #000000;
+			z-index: 999999;
+			text-align: left;
+			background-color: #FFFFFF;
+			padding: 1em;
+		}
+
+		a.privacy {
+			text-align: center;
+			font-size: 0.8em;
+			color: #808080;
+			display: block;
+		}
+
+		@media all and (max-width:40em) {
+			body {
+				font-size: 0.8em;
+			}
+		}
+
+		div.visible {
+			animation: fadeIn 0.4s;
+			display: block;
+		}
+
+		div.hidden {
+			animation: fadeOut 0.4s;
+			display: none;
+		}
+
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			0% {
+				display: block;
+				opacity: 1;
+			}
+
+			100% {
+				display: block;
+				opacity: 0;
+			}
+		}
+		.topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #743481;
+            color: white;
+        }
+	</style>
+	<title>CMIP6 Data Download Speed Test</title>
+</head>
+
+<body onload="initServers()">
+	<div class="topnav">
+		<a href="index.html" target="_blank">Introduction</a>
+		<a href="tutorial.html" target="_blank">Tutorial</a>
+		<a class="active" href="test.html" target="_blank">Test</a>
+		<a href="test-result.html" target="_blank">Result</a>
+		<a href="contact.html" target="_blank">Contact us</a>
+	</div>
+	<h1>CMIP6 Data Nodes Speed Test</h1>
+	<div id="loading" class="visible">
+		<p id="message"><span class="loadCircle"></span>Testing CMIP6 Data Nodes Availability...</p>
+		<a href='tutorial.html' target="_blank"> Please Check the tutorial</a>
+	</div>
+	<div id="testWrapper" class="hidden">
+		<div id="startStopBtn" onclick="startStop()"></div>
+		<div id="startStopAllBtn" onclick="startStopAll()"></div>
+		<div id="serverArea">
+			Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+		</div>
+		<div id="test">
+			<div class="testGroup">
+				<div class="testArea2">
+					<div class="testName">Ping</div>
+					<div id="pingText" class="meterText" style="color:#AA6060"></div>
+					<div class="unit">ms</div>
+				</div>
+				<div class="testArea2">
+					<div class="testName">Jitter</div>
+					<div id="jitText" class="meterText" style="color:#AA6060"></div>
+					<div class="unit">ms</div>
+				</div>
+			</div>
+			<div class="testGroup">
+				<div class="testArea">
+					<div class="testName">Download</div>
+					<canvas id="dlMeter" class="meter"></canvas>
+					<div id="dlText" class="meterText"></div>
+					<div class="unit">Mbps</div>
+				</div>
+				<div class="testArea" style="display:none">
+					<div class="testName">Upload</div>
+					<canvas id="ulMeter" class="meter"></canvas>
+					<div id="ulText" class="meterText"></div>
+					<div class="unit">Mbps</div>
+				</div>
+			</div>
+			<div id="ipArea">
+				<span id="ip"></span>
+			</div>
+			<div id="resultArea" style="display:none">
+				<h3>Test results</h3>
+				<table id="testResultTable" border="1">
+					<tr>
+						<th>Your IP</th>
+						<th>Destination CMIP6 Data Node</th>
+						<th>Ping (ms)</th>
+						<th>Jitter (ms)</th>
+						<th>Download Speed (Mbps)</th>
+						<th style="width:35%">Result Url</th>
+					</tr>
+				</table>
+			</div>
+		</div>`
+		<a href='https://www.tsinghua.edu.cn/publish/ess/' target="_blank"> <img src='logo.png'></img></a>
+	</div>
+	<div id="privacyPolicy" style="display:none">
+		<h2>What is CMIP6?</h2>
+		<p>
+			The <a href="https://www.wcrp-climate.org/wgcm-cmip">Coupled Model Intercomparison Project</a>, which began
+			in 1995 under the auspices of the <a href="https://www.wcrp-climate.org/about-wcrp/wcrp-overview">World
+				Climate Research Programme (WCRP)</a>, is now in its sixth phase (CMIP6). CMIP6 coordinates somewhat
+			independent <a href="https://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">model
+				intercomparison activities and their experiments</a> which have adopted a common infrastructure for
+			collecting, organizing, and distributing output from models performing common sets of experiments. The
+			simulation data produced by models under previous phases of CMIP have been used in thousands of research
+			papers (some of which are listed <a href="https://cmip-publications.llnl.gov/view/CMIP5/">here</a>), and the
+			multi-model results provide some perspective on errors and uncertainty in model simulations. This
+			information has proved invaluable in preparing high profile reports assessing our understanding of climate
+			and climate change (e.g., the <a href="http://www.ipcc.ch/">IPCC Assessment Reports</a>).</p>
+		<h2>About this test</h2>
+		<p>Compared to CMIP5(~2PB), 40-60 PB of model output is expected for CMIP6, therefore downloading speed strongly
+			affects the efficiency of model intercomparison research</p>
+		<p>This webpage tests your download speed from all available cmip6 data nodes, and is configured with telemetry
+			enabled.</p>
+		<h4>What data we collect</h4>
+		<p>
+			At the end of the test, the following data is collected and stored:
+			<ul>
+				<li>Test ID</li>
+				<li>Time of testing</li>
+				<li>Test results (download speed, ping and jitter)</li>
+				<li>IP address</li>
+				<li>ISP information</li>
+				<li>Approximate location (inferred from IP address, not GPS)</li>
+				<li>User agent and browser locale</li>
+				<li>Test log (contains no personal information)</li>
+			</ul>
+		</p>
+		<h4>How we use the data</h4>
+		<p>
+			Data collected through this service is used to:
+			<ul>
+				<li>Allow sharing of test results (sharable json for each test)</li>
+				<li>Test the CMIP6 data accessibility in diffenrent regions of the world</li>
+			</ul>
+			No personal information is disclosed to third parties.
+		</p>
+		<h4>Your consent</h4>
+		<p>
+			By starting the test, you consent to the terms of this privacy policy.
+		</p>
+		<h4>Data removal</h4>
+		<p>
+			If you want to have your information deleted, you need to provide either the ID of the test or your IP
+			address. This is the only way to identify your data, without this information we won't be able to comply
+			with your request.<br /><br />
+			Contact this email address for all deletion requests: <a
+				href="mailto:liuyufu18@mails.tsinghua.edu.cn">liuyufu18@mails.tsinghua.edu.cn</a>.
+		</p>
+		<h4>About the test datasource</h4>
+		<p>
+			This site tests your speed to download a file from all available cmip6 data nodes in browser:
+			<ul>
+				<li>The data node list is extracted from https://esgf-node.llnl.gov/search/cmip6/</li>
+				<li>Ping and Jitter are tested against the data nodes</li>
+				<li>Download speed is tested by downloading an nc file from selected data node(s)</li>
+			</ul>
+		</p>
+		<h4>Why is this site in http?</h4>
+		<p>
+			Because most of the cmip6 data nodes are http(Although it is safer in https, it's impossible to force all of
+			the nodes to upgrade).
+			This speed test requires the browser to request those http resources, if this site is in https, the request
+			would be blocked.
+		</p>
+		<h4>Support</h4>
+		<p>
+			If you have any question, please contact this email address : <a
+				href="mailto:liuyufu18@mails.tsinghua.edu.cn">liuyufu18@mails.tsinghua.edu.cn</a>.
+		</p>
+		<br /><br />
+		<a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">Close</a><br />
+	</div>
+</body>
+
+</html>

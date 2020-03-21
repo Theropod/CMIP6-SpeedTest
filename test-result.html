@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+  <meta charset="UTF-8" />
+  <style type="text/css">
+    html,
+    body {
+      border: none;
+      padding-left: 4rem !important;
+      padding-right: 4rem !important;
+      margin: 0;
+      background: #FFFFFF;
+      color: #202020;
+    }
+
+    body {
+      text-align: left;
+      font-family: "Roboto", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: #404040;
+    }
+
+    img {
+      width: 1000px
+    }
+
+    .rendered_html img, .rendered_html svg{
+      max-width: 40%;
+    }
+
+    .logo {
+      width: min-content;
+    }
+
+    @media all and (max-width:40em) {
+      body {
+        font-size: 0.8em;
+      }
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #743481;
+      color: white;
+    }
+
+    .input_prompt{
+      display:none;
+    }
+  </style>
+  <title>CMIP6 Data Download Speed Test - Tutorial</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function () {
+      $("#resultcontent").load("Speedtest_Result.html");
+    });
+  </script>
+</head>
+
+<body">
+  <div class="topnav">
+    <a href="index.html" target="_blank">Introduction</a>
+    <a href="tutorial.html" target="_blank">Tutorial</a>
+    <a href="test.html" target="_blank">Test</a>
+    <a class="active" href="test-result.html" target="_blank">Result</a>
+    <a href="contact.html" target="_blank">Contact us</a>
+  </div>
+  <div id="resultcontent">
+  </div>
+  </body>
+
+</html>

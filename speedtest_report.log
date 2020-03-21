@@ -1,0 +1,4 @@
+Parsing... [64] [0/s]mysql: [Warning] Using a password on the command line interface can be insecure.
+[NbConvertApp] Converting notebook Speedtest_Result.ipynb to html
+[NbConvertApp] Executing notebook with kernel: python3
+[NbConvertApp] Writing 356485 bytes to Speedtest_Result.html

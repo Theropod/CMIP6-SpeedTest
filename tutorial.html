@@ -29,7 +29,11 @@
 		}
 
 		img {
-			width: 85%;
+			width: 1000px
+		}
+
+		.logo {
+			width: min-content;
 		}
 
 		@media all and (max-width:40em) {
@@ -37,84 +41,61 @@
 				font-size: 0.8em;
 			}
 		}
+		.topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #743481;
+            color: white;
+        }
 	</style>
-	<title>Speed Test tutorial</title>
+	<title>CMIP6 Data Download Speed Test - Tutorial</title>
 </head>
 
 <body">
-	<h1>CMIP6 Data Nodes Speed Test</h1>
-	<h2>What is CMIP6?</h2>
-	<p>
-		The <a href="https://www.wcrp-climate.org/wgcm-cmip">Coupled Model Intercomparison Project</a>, is now in its
-		sixth phase (CMIP6). The project has proved invaluable in preparing high profile reports assessing our
-		understanding of climate and climate change (e.g., the <a href="http://www.ipcc.ch/">IPCC Assessment
-			Reports</a>).</p>
-	<h2>About this test</h2>
-	<p>This Chrome extension and webpage tests your download speed from all available cmip6 data nodes, and is telemetry enabled.</p>
-	<h4>How we use the data</h4>
-	<p> Data collected through this service is used to test the CMIP6 data accessibility in different regions of the world.</p>
-	<p> No personal information is disclosed to third parties. </p>
-	<h4>What data we collect</h4>
-	<p>
-		At the end of the test, the following data is collected and stored:
-		<ul>
-			<li>Test ID</li>
-			<li>Time of testing</li>
-			<li>Test results (download speed, ping and jitter)</li>
-			<li>IP address</li>
-			<li>ISP information</li>
-			<li>Approximate location (inferred from IP address, not GPS)</li>
-			<li>User agent and browser locale</li>
-			<li>Test log (contains no personal information)</li>
-		</ul>
-	</p>
-	<h4>Support</h4>
-	<p>
-		If you have any question, please contact this email address : <a
-			href="mailto:liuyufu18@mails.tsinghua.edu.cn">liuyufu18@mails.tsinghua.edu.cn</a>.
-	</p>
+	<div class="topnav">
+        <a href="index.html" target="_blank">Introduction</a>
+        <a class="active" href="tutorial.html" target="_blank">Tutorial</a>
+		<a href="test.html" target="_blank">Test</a>
+		<a href="test-result.html" target="_blank">Result</a>
+        <a href="contact.html" target="_blank">Contact us</a>
+    </div>
 	<h1>How to run this Speed Test</h1>
 	<h2>Step 1. Download, Install and Enable Allow Cors Access Control Extension </h2>
-	<p>If you can access Chrome web store, just search 'CORS' and install Allow CORS: Access-Control-Allow Origin, then activate the extension</p>
-	<img src='CORS-Extension.png'>
+	<p>If you can access Chrome web store, just search 'Allow CORS' and install "Allow CORS: Access-Control-Allow-Origin" then activate the extension (Please refer the second harf of the next Animated GIF file)</p>
+	<img src='CORS-Extension.jpg'>
 	<p>If you cannot access Chrome web store, download the extension below</p>
 	<a href='allow-cors-access-control.crx'>download the extension here</a>
 	<br></br>
-	<img src='activate-allow-cors-extension.gif'>
+	<img src='activate-allow-cors-extension.gif' >
 	<h2>Step 2. Test all </h2>
-	<p>Enter <a href='http://speedtest.theropod.tk'>the speedtest page</a>, and click 'test all' to run the test. You
+	<p>Enter <a href='http://speedtest.theropod.tk/test.html' target="_blank">the speedtest page</a>, and click 'test all' to run the test. You
 		can also select any node you like and test its downloading speed by clicking 'test selected'. There will be an alert when all tests compelete</p>
-	<img src='test-all.gif'>
+	<img src='test-all.gif' >
 	<h2>Step 3. Get Result </h2>
-	<p>You can also get each test result through result url</p>
+	<p>The test result will be shown as a table, and ID of each test is provided in the 'Result URL' column </p>
+	<img src='testresult.png' >
 	<h2>Step 4.Remove the Extension</h2>
-	<p>Attention! This Extension is only for web development test, for security reasons, please
-		remove it after test complete!</p>
-	<h1>Other Information</h1>
-	<h4>Data removal</h4>
-	<p>
-		If you want to have your information deleted, you need to provide either the ID of the test or your IP
-		address. This is the only way to identify your data, without this information we won't be able to comply
-		with your request.<br /><br />
-		Contact this email address for all deletion requests: <a
-			href="mailto:liuyufu18@mails.tsinghua.edu.cn">liuyufu18@mails.tsinghua.edu.cn</a>.
+	<p>Since this extension is only designed for development, for security reasons, please remove "Allow CORS" Chrome extension after the test by right clicking the 
+		extension icon and select "Remove from Chrome".
 	</p>
-	<h4>About the test datasource</h4>
-	<p>
-		This site tests your speed to download a file from all available cmip6 data nodes in browser:
-		<ul>
-			<li>The data node list is extracted from https://esgf-node.llnl.gov/search/cmip6/</li>
-			<li>Ping and Jitter are tested against the data nodes</li>
-			<li>Download speed is tested by downloading an nc file from selected data node(s)</li>
-		</ul>
-	</p>
-	<h4>Why is this site in http?</h4>
-	<p>
-		Because most of the cmip6 data nodes are http(Although it is safer in https, it's impossible to force all of
-		the nodes to upgrade).
-		This speed test requires the browser to request those http resources, if this site is in https, the request
-		would be blocked.
-	</p>
+	<a href='https://www.tsinghua.edu.cn/publish/ess/' target="_blank"> <img src='logo.png' class='logo'></img></a>
 	</body>
 
 </html>
