@@ -9,6 +9,8 @@ I installed:
   - php-mysqli
   - phpmyadmin(not necessary)
   and changed settings in ./results/telemetry_settings.php for connecting the database
+## Report Generation
+run `./resources/result-update/generate_report_example.sh` to generate a html report from jupyter noteboook , which will be embedded in test-result.html (you may need corresponding envs installed and modify the file paths). I made a cron job to automate the generation.
 ## About the test datasource
 - use XMLHttpRequest to test your speed to download a file from all available cmip6 data nodes in browser:
 - /backend/getESGFDataNodes.php: The data node list is extracted from https://esgf-node.llnl.gov/search/cmip6/ and download url is extrated from the wget download script provided by cmip6 api. Changed http/https in some url to successfully access that website.
