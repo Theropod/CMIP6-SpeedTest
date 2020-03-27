@@ -341,9 +341,13 @@ function dlTest(done) {
 				xhr[i] = x;
 				xhr[i].onprogress = function(event) {
 					tverb("dl stream progress event " + i + " " + event.loaded);
-					if (testState !== 1) {
+					// if status code is not 200 (e.g. 302 to redirect you to esgf login page, abort)
+					var statuscode=event.currentTarget.status;
+					if (testState !== 1|| (statuscode !=200)) {
+						console.log(xhr[i].status)
 						try {
 							x.abort();
+							return;
 						} catch (e) {}
 					} // just in case this XHR is still running after the download test
 					// progress event, add number of new loaded bytes to totLoaded
@@ -377,7 +381,7 @@ function dlTest(done) {
 				} catch (e) {}
 				// no need for cors parameter becauese CMIP node thredds server dont provide Access-Control-Allow-Origin' header as default
 				// xhr[i].open("GET", settings.url_dl + url_sep(settings.url_dl) + (settings.mpot ? "cors=true&" : "") + "r=" + Math.random() + "&ckSize=" + settings.garbagePhp_chunkSize, true); // random string to prevent caching
-				xhr[i].open("GET", settings.url_dl + url_sep(settings.url_dl) + "r=" + Math.random() + "&ckSize=" + settings.garbagePhp_chunkSize, true); // random string to prevent caching
+				xhr[i].open("GET", settings.url_dl + url_sep(settings.url_dl) + "r=" + Math.random(), true); // random string to prevent caching
 				xhr[i].send();
 			}.bind(this),
 			1 + delay

@@ -14,8 +14,8 @@
             "timezone": "America/Los_Angeles",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1609",
-        "dl_url": "http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/n2o/gn/v20190621/n2o_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
+        "dataset_count": "1610",
+        "dl_url": "http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/co2/gn/v20190621/co2_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "cmip.bcc.cma.cn",
@@ -30,8 +30,8 @@
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "23507",
-        "dl_url": "http://cmip.bcc.cma.cn/thredds/fileServer/cmip6_data/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/n2o/gn/v20190621/n2o_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
+        "dataset_count": "31580",
+        "dl_url": "http://cmip.bcc.cma.cn/thredds/fileServer/cmip6_data/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/co2/gn/v20190621/co2_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "cmip.dess.tsinghua.edu.cn",
@@ -47,7 +47,7 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "126",
-        "dl_url": "https://cmip.dess.tsinghua.edu.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/THU/CIESM/piControl/r1i1p1f1/Ofx/sftof/gn/v20200220/sftof_Ofx_CIESM_piControl_r1i1p1f1_gn.nc"
+        "dl_url": "https://cmip.dess.tsinghua.edu.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/THU/CIESM/piControl/r1i1p1f1/Amon/rlutcs/gr/v20191202/rlutcs_Amon_CIESM_piControl_r1i1p1f1_gr_000101-005012.nc"
     },
     {
         "node_name": "cmip.fio.org.cn",
@@ -62,8 +62,8 @@
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1214",
-        "dl_url": "http://cmip.fio.org.cn/thredds/fileServer/esg_dataroot/cmip6/CMIP6/CMIP/FIO-QLNM/FIO-ESM-2-0/amip/r1i1p2f1/Amon/hfss/gn/v20200212/hfss_Amon_FIO-ESM-2-0_amip_r1i1p2f1_gn_197901-201412.nc"
+        "dataset_count": "1521",
+        "dl_url": "http://cmip.fio.org.cn/thredds/fileServer/esg_dataroot/cmip6/CMIP6/CMIP/FIO-QLNM/FIO-ESM-2-0/1pctCO2/r1i1p1f1/Amon/cli/gn/v20200305/cli_Amon_FIO-ESM-2-0_1pctCO2_r1i1p1f1_gn_010101-011012.nc"
     },
     {
         "node_name": "crd-esgf-drc.ec.gc.ca",
@@ -80,8 +80,8 @@
             "timezone": "America/Toronto",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "639558",
-        "dl_url": "http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgC_dataroot/AR6/CMIP6/C4MIP/CCCma/CanESM5/1pctCO2-bgc/r1i1p1f1/Amon/rldscs/gn/v20190429/rldscs_Amon_CanESM5_1pctCO2-bgc_r1i1p1f1_gn_185001-200012.nc"
+        "dataset_count": "642144",
+        "dl_url": "http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgC_dataroot/AR6/CMIP6/C4MIP/CCCma/CanESM5/1pctCO2-bgc/r1i1p1f1/Amon/huss/gn/v20190429/huss_Amon_CanESM5_1pctCO2-bgc_r1i1p1f1_gn_185001-200012.nc"
     },
     {
         "node_name": "dist.nmlab.snu.ac.kr",
@@ -99,7 +99,25 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "840",
-        "dl_url": "http://dist.nmlab.snu.ac.kr/thredds/fileServer/my_cmip6_dataroot/CMIP6/CMIP/SNU/SAM0-UNICON/1pctCO2/r1i1p1f1/Amon/cct/gn/v20190323/cct_Amon_SAM0-UNICON_1pctCO2_r1i1p1f1_gn_188001-188912.nc"
+        "dl_url": "http://dist.nmlab.snu.ac.kr/thredds/fileServer/my_cmip6_dataroot/CMIP6/CMIP/SNU/SAM0-UNICON/1pctCO2/r1i1p1f1/Amon/ccb/gn/v20190323/ccb_Amon_SAM0-UNICON_1pctCO2_r1i1p1f1_gn_195001-195912.nc"
+    },
+    {
+        "node_name": "dpesgf03.nccs.nasa.gov",
+        "node_ip": "169.154.151.145 - NASA Goddard Space Flight Center, US",
+        "node_isp_info": {
+            "ip": "169.154.151.145",
+            "hostname": "cds.nccs.nasa.gov",
+            "city": "Cleveland",
+            "region": "Ohio",
+            "country": "US",
+            "loc": "41.4342,-81.8044",
+            "org": "AS7847 NASA Goddard Space Flight Center",
+            "postal": "44135",
+            "timezone": "America/New_York",
+            "readme": "https://ipinfo.io/missingauth"
+        },
+        "dataset_count": "27705",
+        "dl_url": "https://dpesgf03.nccs.nasa.gov/thredds/fileServer/CMIP6/C4MIP/NASA-GISS/GISS-E2-1-G-CC/esm-1pct-brch-1000PgC/r1i1p1f1/Amon/cli/gn/v20191202/cli_Amon_GISS-E2-1-G-CC_esm-1pct-brch-1000PgC_r1i1p1f1_gn_192001-196912.nc"
     },
     {
         "node_name": "esg-cccr.tropmet.res.in",
@@ -117,7 +135,7 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "482",
-        "dl_url": "http://esg-cccr.tropmet.res.in/thredds/fileServer/esg_dataroot2/1pctCO2/CMIP6/CMIP/CCCR-IITM/IITM-ESM/1pctCO2/r1i1p1f1/Amon/cct/gn/v20191204/cct_Amon_IITM-ESM_1pctCO2_r1i1p1f1_gn_188001-188912.nc"
+        "dl_url": "http://esg-cccr.tropmet.res.in/thredds/fileServer/esg_dataroot2/1pctCO2/CMIP6/CMIP/CCCR-IITM/IITM-ESM/1pctCO2/r1i1p1f1/Amon/ccb/gn/v20191204/ccb_Amon_IITM-ESM_1pctCO2_r1i1p1f1_gn_195001-195912.nc"
     },
     {
         "node_name": "esg-dn1.nsc.liu.se",
@@ -134,8 +152,8 @@
             "timezone": "Europe/Stockholm",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "3578",
-        "dl_url": "http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot7/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/1pctCO2/r1i1p1f1/Amon/clivi/gr/v20190702/clivi_Amon_EC-Earth3-Veg_1pctCO2_r1i1p1f1_gr_186801-186812.nc"
+        "dataset_count": "4988",
+        "dl_url": "http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot7/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/1pctCO2/r1i1p1f1/Amon/clivi/gr/v20200226/clivi_Amon_EC-Earth3-Veg_1pctCO2_r1i1p1f1_gr_186001-186012.nc"
     },
     {
         "node_name": "esg-dn2.nsc.liu.se",
@@ -152,8 +170,8 @@
             "timezone": "Europe/Stockholm",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1520",
-        "dl_url": "http://esg-dn2.nsc.liu.se/thredds/fileServer/esg_dataroot1/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3/amip/r1i1p1f1/Amon/clivi/gr/v20200203/clivi_Amon_EC-Earth3_amip_r1i1p1f1_gr_199701-199712.nc"
+        "dataset_count": "1522",
+        "dl_url": "http://esg-dn2.nsc.liu.se/thredds/fileServer/esg_dataroot1/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3/amip/r1i1p1f1/Amon/clivi/gr/v20200203/clivi_Amon_EC-Earth3_amip_r1i1p1f1_gr_198901-198912.nc"
     },
     {
         "node_name": "esg.camscma.cn",
@@ -170,7 +188,7 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "1627",
-        "dl_url": "http://esg.camscma.cn/thredds/fileServer/cmip6/CMIP6/CMIP/CAMS/CAMS-CSM1-0/1pctCO2/r1i1p1f1/Amon/cli/gn/v20190708/cli_Amon_CAMS-CSM1-0_1pctCO2_r1i1p1f1_gn_315001-316412.nc"
+        "dl_url": "http://esg.camscma.cn/thredds/fileServer/cmip6/CMIP6/CMIP/CAMS/CAMS-CSM1-0/1pctCO2/r1i1p1f1/Amon/cli/gn/v20190708/cli_Amon_CAMS-CSM1-0_1pctCO2_r1i1p1f1_gn_303001-304412.nc"
     },
     {
         "node_name": "esg.lasg.ac.cn",
@@ -186,8 +204,8 @@
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "71794",
-        "dl_url": "http://esg.lasg.ac.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/CAS/FGOALS-f3-L/1pctCO2/r1i1p1f1/Amon/pr/gr/v20191020/pr_Amon_FGOALS-f3-L_1pctCO2_r1i1p1f1_gr_185001-200912.nc"
+        "dataset_count": "79113",
+        "dl_url": "http://esg.lasg.ac.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/CAS/CAS-ESM2-0/1pctCO2/r1i1p1f1/Amon/hfls/gn/v20200317/hfls_Amon_CAS-ESM2-0_1pctCO2_r1i1p1f1_gn_025001-040212.nc"
     },
     {
         "node_name": "esg1.umr-cnrm.fr",
@@ -204,8 +222,8 @@
             "timezone": "Europe/Paris",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "109194",
-        "dl_url": "http://esg1.umr-cnrm.fr/thredds/fileServer/CMIP6_CNRM/AerChemMIP/CNRM-CERFACS/CNRM-ESM2-1/hist-1950HC/r2i1p1f2/Amon/mc/gr/v20190621/mc_Amon_CNRM-ESM2-1_hist-1950HC_r2i1p1f2_gr_195001-201412.nc"
+        "dataset_count": "155446",
+        "dl_url": "http://esg1.umr-cnrm.fr/thredds/fileServer/CMIP6_CNRM/AerChemMIP/CNRM-CERFACS/CNRM-ESM2-1/hist-1950HC/r2i1p1f2/Amon/co2/gr/v20190621/co2_Amon_CNRM-ESM2-1_hist-1950HC_r2i1p1f2_gr_195001-201412.nc"
     },
     {
         "node_name": "esgdata.gfdl.noaa.gov",
@@ -222,8 +240,8 @@
             "timezone": "America/New_York",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "20170",
-        "dl_url": "http://esgdata.gfdl.noaa.gov/thredds/fileServer/gfdl_dataroot4/AerChemMIP/NOAA-GFDL/GFDL-ESM4/hist-1950HC/r1i1p1f1/Amon/hfss/gr1/v20180701/hfss_Amon_GFDL-ESM4_hist-1950HC_r1i1p1f1_gr1_195001-201412.nc"
+        "dataset_count": "20320",
+        "dl_url": "http://esgdata.gfdl.noaa.gov/thredds/fileServer/gfdl_dataroot4/AerChemMIP/NOAA-GFDL/GFDL-ESM4/hist-1950HC/r1i1p1f1/Amon/clt/gr1/v20180701/clt_Amon_GFDL-ESM4_hist-1950HC_r1i1p1f1_gr1_195001-201412.nc"
     },
     {
         "node_name": "esgf-cnr.hpc.cineca.it",
@@ -231,17 +249,17 @@
         "node_isp_info": {
             "ip": "130.186.13.153",
             "hostname": "esgf-cnr.hpc.cineca.it",
-            "city": "Sasso Marconi",
+            "city": "Casalecchio di Reno",
             "region": "Emilia-Romagna",
             "country": "IT",
-            "loc": "44.4006,11.2518",
+            "loc": "44.4756,11.2750",
             "org": "AS137 Consortium GARR",
-            "postal": "40037",
+            "postal": "40033",
             "timezone": "Europe/Rome",
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "3197",
-        "dl_url": "http://esgf-cnr.hpc.cineca.it/thredds/fileServer/cmip6/vaaa/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/amip/r4i1p1f1/Amon/clivi/gr/v20191011/clivi_Amon_EC-Earth3-Veg_amip_r4i1p1f1_gr_199701-199712.nc"
+        "dl_url": "http://esgf-cnr.hpc.cineca.it/thredds/fileServer/cmip6/vaaa/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/amip/r4i1p1f1/Amon/clivi/gr/v20191011/clivi_Amon_EC-Earth3-Veg_amip_r4i1p1f1_gr_198901-198912.nc"
     },
     {
         "node_name": "esgf-data.ucar.edu",
@@ -258,8 +276,8 @@
             "timezone": "America/Denver",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "531313",
-        "dl_url": "http://esgf-data.ucar.edu/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/NCAR/CESM2-WACCM/hist-1950HC/r1i1p1f1/Amon/clwvi/gn/v20190606/clwvi_Amon_CESM2-WACCM_hist-1950HC_r1i1p1f1_gn_195001-199912.nc"
+        "dataset_count": "549632",
+        "dl_url": "http://esgf-data.ucar.edu/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/NCAR/CESM2-WACCM/hist-1950HC/r1i1p1f1/Amon/cli/gn/v20190606/cli_Amon_CESM2-WACCM_hist-1950HC_r1i1p1f1_gn_195001-199912.nc"
     },
     {
         "node_name": "esgf-data1.llnl.gov",
@@ -277,7 +295,7 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "450",
-        "dl_url": "http://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/AerChemMIP/HAMMOZ-Consortium/MPI-ESM-1-2-HAM/hist-piAer/r1i1p1f1/Amon/ts/gn/v20190627/ts_Amon_MPI-ESM-1-2-HAM_hist-piAer_r1i1p1f1_gn_185001-186912.nc"
+        "dl_url": "http://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/AerChemMIP/AS-RCEC/TaiESM1/histSST/r1i1p1f1/Amon/evspsbl/gn/v20200310/evspsbl_Amon_TaiESM1_histSST_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "esgf-data2.diasjp.net",
@@ -294,8 +312,8 @@
             "timezone": "Asia/Tokyo",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "200946",
-        "dl_url": "http://esgf-data2.diasjp.net/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/MIROC/MIROC6/hist-piAer/r1i1p1f1/Amon/cl/gn/v20190807/cl_Amon_MIROC6_hist-piAer_r1i1p1f1_gn_199001-199912.nc"
+        "dataset_count": "221911",
+        "dl_url": "http://esgf-data2.diasjp.net/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/MIROC/MIROC6/hist-piAer/r1i1p1f1/Amon/cl/gn/v20190807/cl_Amon_MIROC6_hist-piAer_r1i1p1f1_gn_191001-191912.nc"
     },
     {
         "node_name": "esgf-data3.ceda.ac.uk",
@@ -312,8 +330,8 @@
             "timezone": "Europe/London",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "72034",
-        "dl_url": "http://esgf-data3.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/rlds/gn/v20190621/rlds_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
+        "dataset_count": "71161",
+        "dl_url": "http://esgf-data3.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/hur/gn/v20190621/hur_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "esgf-nimscmip6.apcc21.org",
@@ -329,8 +347,8 @@
             "timezone": "Asia/Seoul",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "2771",
-        "dl_url": "http://esgf-nimscmip6.apcc21.org/thredds/fileServer/my_cmip6_dataroot/CO2/1pctCO2/aa009a-Amon/CMIP6/CMIP/NIMS-KMA/KACE-1-0-G/1pctCO2/r1i1p1f1/Amon/prc/gr/v20190916/prc_Amon_KACE-1-0-G_1pctCO2_r1i1p1f1_gr_185001-200012.nc"
+        "dataset_count": "2818",
+        "dl_url": "http://esgf-nimscmip6.apcc21.org/thredds/fileServer/my_cmip6_dataroot/CO2/1pctCO2/aa009a-Amon/CMIP6/CMIP/NIMS-KMA/KACE-1-0-G/1pctCO2/r1i1p1f1/Amon/hur/gr/v20200114/hur_Amon_KACE-1-0-G_1pctCO2_r1i1p1f1_gr_185001-200012.nc"
     },
     {
         "node_name": "esgf-node2.cmcc.it",
@@ -347,8 +365,8 @@
             "timezone": "Europe/Rome",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "695",
-        "dl_url": "http://esgf-node2.cmcc.it/thredds/fileServer/esg_dataroot/CMIP6/LS3MIP/CMCC/CMCC-ESM2/land-hist/r1i1p1f1/Amon/hfss/gn/v20200203/hfss_Amon_CMCC-ESM2_land-hist_r1i1p1f1_gn_186001-186912.nc"
+        "dataset_count": "1037",
+        "dl_url": "http://esgf-node2.cmcc.it/thredds/fileServer/esg_dataroot/CMIP6/LS3MIP/CMCC/CMCC-ESM2/land-hist/r1i1p1f1/Amon/hfls/gn/v20200225/hfls_Amon_CMCC-ESM2_land-hist_r1i1p1f1_gn_195001-195912.nc"
     },
     {
         "node_name": "esgf.bsc.es",
@@ -365,8 +383,8 @@
             "timezone": "Europe/Madrid",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "21180",
-        "dl_url": "http://esgf.bsc.es/thredds/fileServer/esg_dataroot/aemet_1co2-CMIP-r3/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3/1pctCO2/r3i1p1f1/Amon/clivi/gr/v20191114/clivi_Amon_EC-Earth3_1pctCO2_r3i1p1f1_gr_186801-186812.nc"
+        "dataset_count": "26443",
+        "dl_url": "http://esgf.bsc.es/thredds/fileServer/esg_dataroot/a21o-CMIP-r5/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/historical/r5i1p1f1/Amon/clivi/gr/v20200312/clivi_Amon_EC-Earth3-Veg_historical_r5i1p1f1_gr_186001-186012.nc"
     },
     {
         "node_name": "esgf.dwd.de",
@@ -374,17 +392,17 @@
         "node_isp_info": {
             "ip": "141.38.3.60",
             "hostname": "esgf.dwd.de",
-            "city": "Offenbach",
+            "city": "Rodgau",
             "region": "Hesse",
             "country": "DE",
-            "loc": "50.1069,8.7344",
+            "loc": "50.0263,8.8859",
             "org": "AS41289 Deutscher Wetterdienst",
-            "postal": "63067",
+            "postal": "63110",
             "timezone": "Europe/Berlin",
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "1072",
-        "dl_url": "https://esgf.dwd.de/thredds/fileServer/esgf2_1/CMIP6/ScenarioMIP/DWD/MPI-ESM1-2-HR/ssp126/r2i1p1f1/Amon/cl/gn/v20190710/cl_Amon_MPI-ESM1-2-HR_ssp126_r2i1p1f1_gn_201501-201912.nc"
+        "dl_url": "https://esgf.dwd.de/thredds/fileServer/esgf2_1/CMIP6/ScenarioMIP/DWD/MPI-ESM1-2-HR/ssp126/r2i1p1f1/Amon/cct/gn/v20190710/cct_Amon_MPI-ESM1-2-HR_ssp126_r2i1p1f1_gn_206501-206912.nc"
     },
     {
         "node_name": "esgf.nccs.nasa.gov",
@@ -401,8 +419,8 @@
             "timezone": "America/New_York",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "35804",
-        "dl_url": "https://esgf.nccs.nasa.gov/thredds/fileServer/CMIP6/AerChemMIP/NASA-GISS/GISS-E2-1-G/piClim-2xDMS/r1i1p3f1/Amon/mc/gn/v20191120/mc_Amon_GISS-E2-1-G_piClim-2xDMS_r1i1p3f1_gn_195001-199012.nc"
+        "dataset_count": "13117",
+        "dl_url": "https://esgf.nccs.nasa.gov/thredds/fileServer/CMIP6/AerChemMIP/NASA-GISS/GISS-E2-1-G/piClim-2xDMS/r1i1p3f1/Amon/clwvi/gn/v20191120/clwvi_Amon_GISS-E2-1-G_piClim-2xDMS_r1i1p3f1_gn_195001-199012.nc"
     },
     {
         "node_name": "esgf.nci.org.au",
@@ -419,15 +437,15 @@
             "timezone": "Australia/Sydney",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "13868",
-        "dl_url": "http://esgf.nci.org.au/thredds/fileServer/master/CMIP6/C4MIP/CSIRO/ACCESS-ESM1-5/1pctCO2-bgc/r1i1p1f1/Amon/clivi/gn/v20191118/clivi_Amon_ACCESS-ESM1-5_1pctCO2-bgc_r1i1p1f1_gn_010101-025012.nc"
+        "dataset_count": "13982",
+        "dl_url": "http://esgf.nci.org.au/thredds/fileServer/master/CMIP6/C4MIP/CSIRO/ACCESS-ESM1-5/1pctCO2-bgc/r1i1p1f1/Amon/cli/gn/v20191118/cli_Amon_ACCESS-ESM1-5_1pctCO2-bgc_r1i1p1f1_gn_010101-012012.nc"
     },
     {
         "node_name": "esgf.rcec.sinica.edu.tw",
         "node_ip": "140.109.172.92 - Academic Sinica Network, TW",
         "node_isp_info": {
             "ip": "140.109.172.92",
-            "hostname": "esgf.rcec.sinica.edu.tw",
+            "hostname": "140-109-172-092.rcec.sinica.edu.tw",
             "city": "Taipei",
             "region": "Taiwan",
             "country": "TW",
@@ -436,8 +454,8 @@
             "timezone": "Asia/Taipei",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "341",
-        "dl_url": "http://esgf.rcec.sinica.edu.tw/thredds/fileServer/my_cmip6_dataroot/CMIP/AS-RCEC/TaiESM1/amip/r1i1p1f1/Amon/rlds/gn/v20191225/rlds_Amon_TaiESM1_amip_r1i1p1f1_gn_197901-201412.nc"
+        "dataset_count": "1013",
+        "dl_url": "http://esgf.rcec.sinica.edu.tw/thredds/fileServer/my_cmip6_dataroot/AerChemMIP/AS-RCEC/TaiESM1/histSST-piNTCF/r1i1p1f1/Amon/evspsbl/gn/v20200318/evspsbl_Amon_TaiESM1_histSST-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "esgf3.dkrz.de",
@@ -452,8 +470,8 @@
             "org": "AS680 Verein zur Foerderung eines Deutschen Forschungsnetzes e.V.",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "100984",
-        "dl_url": "http://esgf3.dkrz.de/thredds/fileServer/cmip6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/o3/gn/v20190621/o3_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
+        "dataset_count": "108777",
+        "dl_url": "http://esgf3.dkrz.de/thredds/fileServer/cmip6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/evspsbl/gn/v20190621/evspsbl_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "noresg.nird.sigma2.no",
@@ -470,8 +488,8 @@
             "timezone": "Europe/Oslo",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "385655",
-        "dl_url": "http://noresg.nird.sigma2.no/thredds/fileServer/esg_dataroot/cmor/CMIP6/AerChemMIP/NCC/NorESM2-LM/hist-piAer/r1i1p1f1/Amon/cct/gn/v20190815/cct_Amon_NorESM2-LM_hist-piAer_r1i1p1f1_gn_186001-186912.nc"
+        "dataset_count": "385935",
+        "dl_url": "http://noresg.nird.sigma2.no/thredds/fileServer/esg_dataroot/cmor/CMIP6/AerChemMIP/NCC/NorESM2-LM/hist-piAer/r1i1p1f1/Amon/ccb/gn/v20190815/ccb_Amon_NorESM2-LM_hist-piAer_r1i1p1f1_gn_195001-195912.nc"
     },
     {
         "node_name": "vesg.ipsl.upmc.fr",
@@ -479,16 +497,16 @@
         "node_isp_info": {
             "ip": "134.157.240.12",
             "hostname": "vesg.ipsl.upmc.fr",
-            "city": "Rosny-sous-Bois",
+            "city": "Paris",
             "region": "\u00cele-de-France",
             "country": "FR",
-            "loc": "48.8702,2.4991",
+            "loc": "48.8534,2.3488",
             "org": "AS1307 Renater",
-            "postal": "93110",
+            "postal": "75000",
             "timezone": "Europe/Paris",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "462434",
-        "dl_url": "http://vesg.ipsl.upmc.fr/thredds/fileServer/cmip6/C4MIP/IPSL/IPSL-CM6A-LR/1pctCO2-bgc/r1i1p1f1/Amon/hus/gr/v20180914/hus_Amon_IPSL-CM6A-LR_1pctCO2-bgc_r1i1p1f1_gr_185001-199912.nc"
+        "dataset_count": "606266",
+        "dl_url": "http://vesg.ipsl.upmc.fr/thredds/fileServer/cmip6/C4MIP/IPSL/IPSL-CM6A-LR/1pctCO2-bgc/r1i1p1f1/Amon/clw/gr/v20180914/clw_Amon_IPSL-CM6A-LR_1pctCO2-bgc_r1i1p1f1_gr_185001-199912.nc"
     }
 ]

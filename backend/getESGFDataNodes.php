@@ -30,7 +30,7 @@ function extractDownloadUrl($node_name)
         if(preg_match_all('/http.*nc/',$nodeWgetScript,$dlUrl)){
             echo '<script>console.log("dl url found")</script>';
             // get the 15th result to avoid small test files on data nodes
-            return $dlUrl[0][18];
+            return $dlUrl[0][10];
         }
         else {
             throw new Exception('dl url not found');

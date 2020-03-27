@@ -1,4 +1,7 @@
 *.pdf
 *.csv
 *.log
+.ipynb_checkpoints
 speedtest_report.sh
+Speedtest_Result.html
+access_report.json
