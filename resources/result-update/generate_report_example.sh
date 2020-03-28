@@ -13,9 +13,9 @@ sudo -- bash -c 'rm /var/lib/mysql-files/*.csv' # delete all existing file in my
 mysql -uroot -p'your_password' -Dyour_db</home/ubuntu/CMIP6-SpeedTest/resources/result-update/speedtest_result_export.sql
 resultfile=$(sudo bash -c  'filename= ls -tr1 /var/lib/mysql-files| grep speedtest_result |tail -1') # only select the latest file
 distributionfile=$(sudo bash -c  'filename= ls -tr1 /var/lib/mysql-files| grep speed_distribution |tail -1') # only select the latest file
-sudo rm ~/CMIP6-SpeedTest/resources/result-update/speedtest_result*.csv ~/CMIP6-SpeedTest/resources/result-update/speed_distribution*.csv
+sudo rm ~/CMIP6-SpeedTest/resources/result-update/speedtest_result*.csv /var/www/html/resources/result-update/speed_distribution*.csv
 sudo cp /var/lib/mysql-files/$resultfile ~/CMIP6-SpeedTest/resources/result-update #copy it from mysql output directory to working directory
-sudo cp /var/lib/mysql-files/$distributionfile ~/CMIP6-SpeedTest/resources/result-update #copy it from mysql output directory to working directory
+sudo cp /var/lib/mysql-files/$distributionfile /var/www/html/resources/result-update #copy it from mysql output directory to working directory
 cd /home/ubuntu/CMIP6-SpeedTest/resources/result-update/
 # add column name to resultfile
 sudo sed -i '1 i\id,timestamp,ip,ispinfo,server,ua,lang,dl,ul,ping,jitter,log' $resultfile

@@ -52,6 +52,11 @@
       font-family: "Roboto", sans-serif;
     }
 
+    /* remove code line spaces rendered jupyter notebook  */
+    .cell.border-box-sizing.code_cell.rendered {
+      display: contents;
+    }
+
     h1,
     h2,
     h3,
@@ -136,28 +141,33 @@
     }
   </style>
   <title>CMIP6 Data Download Speed Test - Tutorial</title>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
   <script>
-    $(function () {
-      $("#resultcontent").load("./resources/result-update/Speedtest_Result.html");
-    });
-    fetch('access_report.json')
-      .then(response => {
-        return response.json();
-      }).then(access_report => {
-        for (const pageacccesslog of access_report.requests.data) {
-          if (pageurl.includes(pageacccesslog.data)) {
-            access_stat.hitcount += Number(pageacccesslog.hits.count);
-            access_stat.hitcount_pctg += Number(pageacccesslog.hits.percent);
-            access_stat.visitorcount += Number(pageacccesslog.visitors.count);
-            access_stat.visitorcount_pctg += Number(pageacccesslog.visitors.percent);
-          }
-        }
-        access_stat.updated = access_report.general.date_time;
-        insert_access_stat_table('access_stat_table', access_stat);
+    fetch('./resources/result-update/Speedtest_Result.html')
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (body) {
+        document.querySelector('#resultcontent').innerHTML = body;
+      }).then(function () {
+        var p=document.createElement('p'); 
+        p.style='text-align: center';
+        p.innerHTML='<iframe width="1000" height="890" src="https://datastudio.google.com/embed/reporting/1889b693-bbc5-4a4b-a364-4fbdc8a3c3a7/page/1M" frameborder="0" style="border:0" allowfullscreen></iframe>';
+        document.querySelector('#notebook-container').appendChild(p);
+        fetch('access_report.json')
+          .then(response => {
+            return response.json();
+          }).then(access_report => {
+            for (const pageacccesslog of access_report.requests.data) {
+              if (pageurl.includes(pageacccesslog.data)) {
+                access_stat.hitcount += Number(pageacccesslog.hits.count);
+                access_stat.hitcount_pctg += Number(pageacccesslog.hits.percent);
+                access_stat.visitorcount += Number(pageacccesslog.visitors.count);
+                access_stat.visitorcount_pctg += Number(pageacccesslog.visitors.percent);
+              }
+            }
+            access_stat.updated = access_report.general.date_time;
+            insert_access_stat_table('access_stat_table', access_stat);
+          })
       }).catch(error => {
         console.log(error);
       });
@@ -174,11 +184,9 @@
   </div>
   <div id="resultcontent">
   </div>
-  <p align="center" style="margin-top: 2rem;"><iframe style="float:center" width="600" height="523"
-      src="https://datastudio.google.com/embed/reporting/1889b693-bbc5-4a4b-a364-4fbdc8a3c3a7/page/1M" frameborder="0"
-      style="border:0" allowfullscreen></iframe></p>
   <div id='access_stat_area'>
-    <h5 style="text-align: center;" onclick="document.getElementById('access_stat_table').style='display:auto'">Show Access Stat</h5>
+    <h5 style="text-align: center;" onclick="document.getElementById('access_stat_table').style='display:auto'">Show
+      Access Stat</h5>
     <table id='access_stat_table' class='access_stat' border="1" style="display:none">
       <tr>
         <th>Hits Count</th>
@@ -191,9 +199,10 @@
   </div>
   <a href='https://www.tsinghua.edu.cn/publish/ess/' target="_blank"> <img src='./resources/tutorial/logo.png' style="
     max-width: 30%;
-    display: block;
+    /* display: block;
     margin-left: auto;
-    margin-right: auto; "></img></a>
+    margin-right: auto;  */
+    "></img></a>
   </body>
 
 </html>
