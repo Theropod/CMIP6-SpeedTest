@@ -57,7 +57,7 @@ var settings = {
 	xhr_dlMultistream: 6, // number of download streams to use (can be different if enable_quirks is active)
 	xhr_ulMultistream: 3, // number of upload streams to use (can be different if enable_quirks is active)
 	xhr_multistreamDelay: 300, //how much concurrent requests should be delayed
-	xhr_ignoreErrors: 1, // 0=fail on errors, 1=attempt to restart a stream if it fails, 2=ignore all errors
+	xhr_ignoreErrors: 2, // 0=fail on errors, 1=attempt to restart a stream if it fails, 2=ignore all errors
 	xhr_dlUseBlob: false, // if set to true, it reduces ram usage but uses the hard drive (useful with large garbagePhp_chunkSize and/or high xhr_dlMultistream)
 	xhr_ul_blob_megabytes: 20, //size in megabytes of the upload blobs sent in the upload test (forced to 4 on chrome mobile)
 	garbagePhp_chunkSize: 100, // size of chunks sent by garbage.php (can be different if enable_quirks is active)
@@ -689,8 +689,8 @@ function pingTest(done) {
 		// xhr[0].open("GET", settings.url_ping + url_sep(settings.url_ping) + (settings.mpot ? "cors=true&" : "") + "r=" + Math.random(), true); // random string to prevent caching
 		xhr[0].open("HEAD", settings.url_ping + url_sep(settings.url_ping) + "r=" + Math.random(), true); // random string to prevent caching
 		//use timeout
-		xhr[0].timeout = 20000;
-		xhr[0].ontimeout = xhr.onerror;
+		xhr[0].timeout = 2000;
+		xhr[0].ontimeout = xhr[0].onerror;
 		xhr[0].send();
 	}.bind(this);
 	doPing(); // start first ping
