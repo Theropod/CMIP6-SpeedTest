@@ -14,7 +14,7 @@
             "timezone": "America/Los_Angeles",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1610",
+        "dataset_count": "1546",
         "dl_url": "http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/co2/gn/v20190621/co2_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
@@ -30,7 +30,7 @@
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "31580",
+        "dataset_count": "49160",
         "dl_url": "http://cmip.bcc.cma.cn/thredds/fileServer/cmip6_data/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/co2/gn/v20190621/co2_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
@@ -38,16 +38,16 @@
         "node_ip": "101.6.6.219 - China Education and Research Network Center, CN",
         "node_isp_info": {
             "ip": "101.6.6.219",
-            "city": "Beijing",
+            "city": "Haidian",
             "region": "Beijing",
             "country": "CN",
-            "loc": "39.9075,116.3972",
+            "loc": "39.9906,116.2887",
             "org": "AS4538 China Education and Research Network Center",
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "126",
-        "dl_url": "https://cmip.dess.tsinghua.edu.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/THU/CIESM/piControl/r1i1p1f1/Amon/rlutcs/gr/v20191202/rlutcs_Amon_CIESM_piControl_r1i1p1f1_gr_000101-005012.nc"
+        "dataset_count": "1287",
+        "dl_url": "https://cmip.dess.tsinghua.edu.cn/thredds/fileServer/esg_dataroot/esg/DRS/atm/CMIP6/CMIP/THU/CIESM/1pctCO2/r1i1p1f1/Amon/huss/gr/v20200417/huss_Amon_CIESM_1pctCO2_r1i1p1f1_gr_000101-015012.nc"
     },
     {
         "node_name": "cmip.fio.org.cn",
@@ -62,7 +62,7 @@
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1521",
+        "dataset_count": "1582",
         "dl_url": "http://cmip.fio.org.cn/thredds/fileServer/esg_dataroot/cmip6/CMIP6/CMIP/FIO-QLNM/FIO-ESM-2-0/1pctCO2/r1i1p1f1/Amon/cli/gn/v20200305/cli_Amon_FIO-ESM-2-0_1pctCO2_r1i1p1f1_gn_010101-011012.nc"
     },
     {
@@ -71,17 +71,17 @@
         "node_isp_info": {
             "ip": "205.189.10.92",
             "hostname": "crd-esgf-drc.ec.gc.ca",
-            "city": "Ottawa",
-            "region": "Ontario",
+            "city": "Dollard-Des Ormeaux",
+            "region": "Quebec",
             "country": "CA",
-            "loc": "45.3548,-75.5773",
+            "loc": "45.4945,-73.8242",
             "org": "AS806 Shared Services Canada",
-            "postal": "K1G",
+            "postal": "H9A",
             "timezone": "America/Toronto",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "642144",
-        "dl_url": "http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgC_dataroot/AR6/CMIP6/C4MIP/CCCma/CanESM5/1pctCO2-bgc/r1i1p1f1/Amon/huss/gn/v20190429/huss_Amon_CanESM5_1pctCO2-bgc_r1i1p1f1_gn_185001-200012.nc"
+        "dataset_count": "649992",
+        "dl_url": "http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgA_dataroot/AR6/CMIP6/C4MIP/CCCma/CanESM5-CanOE/esm-ssp585/r1i1p2f1/Amon/hurs/gn/v20190429/hurs_Amon_CanESM5-CanOE_esm-ssp585_r1i1p2f1_gn_201501-210012.nc"
     },
     {
         "node_name": "dist.nmlab.snu.ac.kr",
@@ -116,8 +116,8 @@
             "timezone": "America/New_York",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "27705",
-        "dl_url": "https://dpesgf03.nccs.nasa.gov/thredds/fileServer/CMIP6/C4MIP/NASA-GISS/GISS-E2-1-G-CC/esm-1pct-brch-1000PgC/r1i1p1f1/Amon/cli/gn/v20191202/cli_Amon_GISS-E2-1-G-CC_esm-1pct-brch-1000PgC_r1i1p1f1_gn_192001-196912.nc"
+        "dataset_count": "56587",
+        "dl_url": "https://dpesgf03.nccs.nasa.gov/thredds/fileServer/CMIP6/AerChemMIP/NASA-GISS/GISS-E2-1-G/hist-1950HC/r1i1p3f1/Amon/cli/gn/v20191120/cli_Amon_GISS-E2-1-G_hist-1950HC_r1i1p3f1_gn_195001-200012.nc"
     },
     {
         "node_name": "esg-cccr.tropmet.res.in",
@@ -125,12 +125,12 @@
         "node_isp_info": {
             "ip": "103.251.186.5",
             "hostname": "esg-cccr.tropmet.res.in",
-            "city": "Deoli",
-            "region": "Delhi",
+            "city": "Pune",
+            "region": "Maharashtra",
             "country": "IN",
-            "loc": "28.5672,77.2725",
+            "loc": "18.5196,73.8554",
             "org": "AS133002 Indian Institute of Tropical Meteorology",
-            "postal": "110025",
+            "postal": "411005",
             "timezone": "Asia/Kolkata",
             "readme": "https://ipinfo.io/missingauth"
         },
@@ -146,14 +146,14 @@
             "city": "Link\u00f6ping",
             "region": "\u00d6sterg\u00f6tland",
             "country": "SE",
-            "loc": "58.4167,15.6167",
+            "loc": "58.4109,15.6216",
             "org": "AS2843 Linkopings universitet",
-            "postal": "581 83",
+            "postal": "580 02",
             "timezone": "Europe/Stockholm",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "4988",
-        "dl_url": "http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot7/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/1pctCO2/r1i1p1f1/Amon/clivi/gr/v20200226/clivi_Amon_EC-Earth3-Veg_1pctCO2_r1i1p1f1_gr_186001-186012.nc"
+        "dataset_count": "10455",
+        "dl_url": "http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot7/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-LR/piControl/r1i1p1f1/Amon/clivi/gr/v20200409/clivi_Amon_EC-Earth3-LR_piControl_r1i1p1f1_gr_222901-222912.nc"
     },
     {
         "node_name": "esg-dn2.nsc.liu.se",
@@ -164,13 +164,13 @@
             "city": "Link\u00f6ping",
             "region": "\u00d6sterg\u00f6tland",
             "country": "SE",
-            "loc": "58.4167,15.6167",
+            "loc": "58.4109,15.6216",
             "org": "AS2843 Linkopings universitet",
-            "postal": "581 83",
+            "postal": "580 02",
             "timezone": "Europe/Stockholm",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1522",
+        "dataset_count": "1922",
         "dl_url": "http://esg-dn2.nsc.liu.se/thredds/fileServer/esg_dataroot1/cmip6data/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3/amip/r1i1p1f1/Amon/clivi/gr/v20200203/clivi_Amon_EC-Earth3_amip_r1i1p1f1_gr_198901-198912.nc"
     },
     {
@@ -179,10 +179,10 @@
         "node_isp_info": {
             "ip": "106.120.80.206",
             "hostname": "206.80.120.106.static.bjtelecom.net",
-            "city": "Jingshan",
+            "city": "Beijing",
             "region": "Beijing",
             "country": "CN",
-            "loc": "39.9253,116.4041",
+            "loc": "39.9075,116.3972",
             "org": "AS4847 China Networks Inter-Exchange",
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
@@ -204,7 +204,7 @@
             "timezone": "Asia/Shanghai",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "79113",
+        "dataset_count": "82040",
         "dl_url": "http://esg.lasg.ac.cn/thredds/fileServer/esg_dataroot/CMIP6/CMIP/CAS/CAS-ESM2-0/1pctCO2/r1i1p1f1/Amon/hfls/gn/v20200317/hfls_Amon_CAS-ESM2-0_1pctCO2_r1i1p1f1_gn_025001-040212.nc"
     },
     {
@@ -222,7 +222,7 @@
             "timezone": "Europe/Paris",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "155446",
+        "dataset_count": "158539",
         "dl_url": "http://esg1.umr-cnrm.fr/thredds/fileServer/CMIP6_CNRM/AerChemMIP/CNRM-CERFACS/CNRM-ESM2-1/hist-1950HC/r2i1p1f2/Amon/co2/gr/v20190621/co2_Amon_CNRM-ESM2-1_hist-1950HC_r2i1p1f2_gr_195001-201412.nc"
     },
     {
@@ -231,23 +231,23 @@
         "node_isp_info": {
             "ip": "140.208.31.117",
             "hostname": "esgdata.gfdl.noaa.gov",
-            "city": "Monmouth Junction",
+            "city": "Princeton",
             "region": "New Jersey",
             "country": "US",
-            "loc": "40.3790,-74.5465",
+            "loc": "40.3535,-74.6594",
             "org": "AS40623 NOAA Geophysical Fluid Dynamics Laboratory",
-            "postal": "08852",
+            "postal": "08542",
             "timezone": "America/New_York",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "20320",
+        "dataset_count": "21300",
         "dl_url": "http://esgdata.gfdl.noaa.gov/thredds/fileServer/gfdl_dataroot4/AerChemMIP/NOAA-GFDL/GFDL-ESM4/hist-1950HC/r1i1p1f1/Amon/clt/gr1/v20180701/clt_Amon_GFDL-ESM4_hist-1950HC_r1i1p1f1_gr1_195001-201412.nc"
     },
     {
         "node_name": "esgf-cnr.hpc.cineca.it",
-        "node_ip": "130.186.13.153 - Consortium GARR, IT",
+        "node_ip": "131.175.196.134 - Consortium GARR, IT",
         "node_isp_info": {
-            "ip": "130.186.13.153",
+            "ip": "131.175.196.134",
             "hostname": "esgf-cnr.hpc.cineca.it",
             "city": "Casalecchio di Reno",
             "region": "Emilia-Romagna",
@@ -259,7 +259,7 @@
             "readme": "https://ipinfo.io/missingauth"
         },
         "dataset_count": "3197",
-        "dl_url": "http://esgf-cnr.hpc.cineca.it/thredds/fileServer/cmip6/vaaa/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/amip/r4i1p1f1/Amon/clivi/gr/v20191011/clivi_Amon_EC-Earth3-Veg_amip_r4i1p1f1_gr_198901-198912.nc"
+        "dl_url": "http://esgf-cnr.hpc.cineca.it/thredds/fileServer/cmip6/vaaa/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/amip/r4i1p1f1/Amon/clivi/gr/v20200501/clivi_Amon_EC-Earth3-Veg_amip_r4i1p1f1_gr_198901-198912.nc"
     },
     {
         "node_name": "esgf-data.ucar.edu",
@@ -270,13 +270,13 @@
             "city": "Boulder",
             "region": "Colorado",
             "country": "US",
-            "loc": "39.9807,-105.2531",
+            "loc": "40.0150,-105.2706",
             "org": "AS194 University Corporation for Atmospheric Research",
-            "postal": "80305",
+            "postal": "80309",
             "timezone": "America/Denver",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "549632",
+        "dataset_count": "544436",
         "dl_url": "http://esgf-data.ucar.edu/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/NCAR/CESM2-WACCM/hist-1950HC/r1i1p1f1/Amon/cli/gn/v20190606/cli_Amon_CESM2-WACCM_hist-1950HC_r1i1p1f1_gn_195001-199912.nc"
     },
     {
@@ -303,17 +303,35 @@
         "node_isp_info": {
             "ip": "157.1.137.37",
             "hostname": "esgf-data2.dias.nii.ac.jp",
-            "city": "Tokyo",
-            "region": "Tokyo",
+            "city": "Chiba",
+            "region": "Chiba",
             "country": "JP",
-            "loc": "35.6910,139.7679",
+            "loc": "35.6000,140.1167",
             "org": "AS2907 Research Organization of Information and Systems, National Institute of Informatics",
-            "postal": "101-0047",
+            "postal": "260-0012",
             "timezone": "Asia/Tokyo",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "221911",
-        "dl_url": "http://esgf-data2.diasjp.net/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/MIROC/MIROC6/hist-piAer/r1i1p1f1/Amon/cl/gn/v20190807/cl_Amon_MIROC6_hist-piAer_r1i1p1f1_gn_191001-191912.nc"
+        "dataset_count": "249580",
+        "dl_url": "http://esgf-data2.diasjp.net/thredds/fileServer/esg_dataroot/CMIP6/AerChemMIP/MIROC/MIROC-ES2H-NB/histSST-1950HC/r1i1p1f2/Amon/hur/gn/v20200529/hur_Amon_MIROC-ES2H-NB_histSST-1950HC_r1i1p1f2_gn_195001-201412.nc"
+    },
+    {
+        "node_name": "esgf-data2.llnl.gov",
+        "node_ip": "198.128.245.177 - ESnet, US",
+        "node_isp_info": {
+            "ip": "198.128.245.177",
+            "hostname": "esgf-data2.llnl.gov",
+            "city": "Livermore",
+            "region": "California",
+            "country": "US",
+            "loc": "37.6819,-121.7680",
+            "org": "AS292 ESnet",
+            "postal": "94550",
+            "timezone": "America/Los_Angeles",
+            "readme": "https://ipinfo.io/missingauth"
+        },
+        "dataset_count": "239",
+        "dl_url": "http://esgf-data2.llnl.gov/thredds/fileServer/user_pub_work/CMIP6/CMIP/E3SM-Project/E3SM-1-1-ECA/historical/r1i1p1f1/Amon/hur/gr/v20200129/hur_Amon_E3SM-1-1-ECA_historical_r1i1p1f1_gr_195001-195912.nc"
     },
     {
         "node_name": "esgf-data3.ceda.ac.uk",
@@ -321,16 +339,16 @@
         "node_isp_info": {
             "ip": "130.246.128.73",
             "hostname": "esgf-data3.ceda.ac.uk",
-            "city": "Broad Blunsdon",
+            "city": "London",
             "region": "England",
             "country": "GB",
-            "loc": "51.6134,-1.7787",
+            "loc": "51.5085,-0.1257",
             "org": "AS786 Jisc Services Limited",
-            "postal": "SN2",
+            "postal": "EC1A",
             "timezone": "Europe/London",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "71161",
+        "dataset_count": "82065",
         "dl_url": "http://esgf-data3.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/hur/gn/v20190621/hur_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
@@ -338,16 +356,16 @@
         "node_ip": "210.98.49.125 - KISTI, KR",
         "node_isp_info": {
             "ip": "210.98.49.125",
-            "city": "Seoul",
-            "region": "Seoul",
+            "city": "Busan",
+            "region": "Busan",
             "country": "KR",
-            "loc": "37.5660,126.9784",
+            "loc": "35.1017,129.0300",
             "org": "AS1237 KISTI",
-            "postal": "03186",
+            "postal": "48926",
             "timezone": "Asia/Seoul",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "2818",
+        "dataset_count": "3068",
         "dl_url": "http://esgf-nimscmip6.apcc21.org/thredds/fileServer/my_cmip6_dataroot/CO2/1pctCO2/aa009a-Amon/CMIP6/CMIP/NIMS-KMA/KACE-1-0-G/1pctCO2/r1i1p1f1/Amon/hur/gr/v20200114/hur_Amon_KACE-1-0-G_1pctCO2_r1i1p1f1_gr_185001-200012.nc"
     },
     {
@@ -361,7 +379,7 @@
             "country": "IT",
             "loc": "41.8919,12.5113",
             "org": "AS137 Consortium GARR",
-            "postal": "00185",
+            "postal": "00118",
             "timezone": "Europe/Rome",
             "readme": "https://ipinfo.io/missingauth"
         },
@@ -379,11 +397,11 @@
             "country": "ES",
             "loc": "41.3888,2.1590",
             "org": "AS13041 Consorci de Serveis Universitaris de Catalunya",
-            "postal": "08034",
+            "postal": "08001",
             "timezone": "Europe/Madrid",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "26443",
+        "dataset_count": "28004",
         "dl_url": "http://esgf.bsc.es/thredds/fileServer/esg_dataroot/a21o-CMIP-r5/CMIP6/CMIP/EC-Earth-Consortium/EC-Earth3-Veg/historical/r5i1p1f1/Amon/clivi/gr/v20200312/clivi_Amon_EC-Earth3-Veg_historical_r5i1p1f1_gr_186001-186012.nc"
     },
     {
@@ -392,12 +410,12 @@
         "node_isp_info": {
             "ip": "141.38.3.60",
             "hostname": "esgf.dwd.de",
-            "city": "Rodgau",
+            "city": "Offenbach",
             "region": "Hesse",
             "country": "DE",
-            "loc": "50.0263,8.8859",
+            "loc": "50.1069,8.7344",
             "org": "AS41289 Deutscher Wetterdienst",
-            "postal": "63110",
+            "postal": "63067",
             "timezone": "Europe/Berlin",
             "readme": "https://ipinfo.io/missingauth"
         },
@@ -405,22 +423,22 @@
         "dl_url": "https://esgf.dwd.de/thredds/fileServer/esgf2_1/CMIP6/ScenarioMIP/DWD/MPI-ESM1-2-HR/ssp126/r2i1p1f1/Amon/cct/gn/v20190710/cct_Amon_MPI-ESM1-2-HR_ssp126_r2i1p1f1_gn_206501-206912.nc"
     },
     {
-        "node_name": "esgf.nccs.nasa.gov",
-        "node_ip": "169.154.195.63 - NASA Goddard Space Flight Center, US",
+        "node_name": "esgf.ichec.ie",
+        "node_ip": "193.1.243.63 - HEAnet, IE",
         "node_isp_info": {
-            "ip": "169.154.195.63",
-            "hostname": "esgf.nccs.nasa.gov",
-            "city": "Cleveland",
-            "region": "Ohio",
-            "country": "US",
-            "loc": "41.4342,-81.8044",
-            "org": "AS7847 NASA Goddard Space Flight Center",
-            "postal": "44135",
-            "timezone": "America/New_York",
+            "ip": "193.1.243.63",
+            "hostname": "esgf.ichec.ie",
+            "city": "Gaillimh",
+            "region": "Connaught",
+            "country": "IE",
+            "loc": "53.2719,-9.0489",
+            "org": "AS1213 HEAnet",
+            "postal": "H91",
+            "timezone": "Europe/Dublin",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "13117",
-        "dl_url": "https://esgf.nccs.nasa.gov/thredds/fileServer/CMIP6/AerChemMIP/NASA-GISS/GISS-E2-1-G/piClim-2xDMS/r1i1p3f1/Amon/clwvi/gn/v20191120/clwvi_Amon_GISS-E2-1-G_piClim-2xDMS_r1i1p3f1_gn_195001-199012.nc"
+        "dataset_count": "5876",
+        "dl_url": "https://esgf.ichec.ie/thredds/fileServer/cmip6/CMIP/EC-Earth-Consortium/EC-Earth3/historical/r11i1p1f1/Amon/clivi/gr/v20200201/clivi_Amon_EC-Earth3_historical_r11i1p1f1_gr_186001-186012.nc"
     },
     {
         "node_name": "esgf.nci.org.au",
@@ -428,16 +446,16 @@
         "node_isp_info": {
             "ip": "130.56.243.38",
             "hostname": "esgf.nci.org.au",
-            "city": "Acton",
+            "city": "Canberra",
             "region": "ACT",
             "country": "AU",
-            "loc": "-35.2777,149.1189",
+            "loc": "-35.2835,149.1281",
             "org": "AS7575 Australian Academic and Research Network (AARNet)",
-            "postal": "0200",
+            "postal": "2600",
             "timezone": "Australia/Sydney",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "13982",
+        "dataset_count": "13769",
         "dl_url": "http://esgf.nci.org.au/thredds/fileServer/master/CMIP6/C4MIP/CSIRO/ACCESS-ESM1-5/1pctCO2-bgc/r1i1p1f1/Amon/cli/gn/v20191118/cli_Amon_ACCESS-ESM1-5_1pctCO2-bgc_r1i1p1f1_gn_010101-012012.nc"
     },
     {
@@ -454,23 +472,25 @@
             "timezone": "Asia/Taipei",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "1013",
+        "dataset_count": "862",
         "dl_url": "http://esgf.rcec.sinica.edu.tw/thredds/fileServer/my_cmip6_dataroot/AerChemMIP/AS-RCEC/TaiESM1/histSST-piNTCF/r1i1p1f1/Amon/evspsbl/gn/v20200318/evspsbl_Amon_TaiESM1_histSST-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
         "node_name": "esgf3.dkrz.de",
-        "node_ip": "136.172.30.113 - Verein zur Foerderung eines Deutschen Forschungsnetzes e.V., ",
+        "node_ip": "136.172.30.113 - Verein zur Foerderung eines Deutschen Forschungsnetzes e.V., DE",
         "node_isp_info": {
             "ip": "136.172.30.113",
             "hostname": "esgf3.dkrz.de",
-            "city": "",
-            "region": "",
-            "country": "",
-            "loc": "0.0000,0.0000",
+            "city": "Hamburg",
+            "region": "Hamburg",
+            "country": "DE",
+            "loc": "53.5753,10.0153",
             "org": "AS680 Verein zur Foerderung eines Deutschen Forschungsnetzes e.V.",
+            "postal": "22085",
+            "timezone": "Europe/Berlin",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "108777",
+        "dataset_count": "125124",
         "dl_url": "http://esgf3.dkrz.de/thredds/fileServer/cmip6/AerChemMIP/BCC/BCC-ESM1/hist-piNTCF/r1i1p1f1/Amon/evspsbl/gn/v20190621/evspsbl_Amon_BCC-ESM1_hist-piNTCF_r1i1p1f1_gn_185001-201412.nc"
     },
     {
@@ -479,16 +499,16 @@
         "node_isp_info": {
             "ip": "158.36.100.100",
             "hostname": "nird-noresg.lb.uninett.no",
-            "city": "Lysaker",
-            "region": "Akershus",
+            "city": "Oslo",
+            "region": "Oslo",
             "country": "NO",
-            "loc": "59.9099,10.6355",
+            "loc": "59.9127,10.7461",
             "org": "AS224 UNINETT AS",
-            "postal": "1324",
+            "postal": "0001",
             "timezone": "Europe/Oslo",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "385935",
+        "dataset_count": "429296",
         "dl_url": "http://noresg.nird.sigma2.no/thredds/fileServer/esg_dataroot/cmor/CMIP6/AerChemMIP/NCC/NorESM2-LM/hist-piAer/r1i1p1f1/Amon/ccb/gn/v20190815/ccb_Amon_NorESM2-LM_hist-piAer_r1i1p1f1_gn_195001-195912.nc"
     },
     {
@@ -506,7 +526,7 @@
             "timezone": "Europe/Paris",
             "readme": "https://ipinfo.io/missingauth"
         },
-        "dataset_count": "606266",
+        "dataset_count": "606899",
         "dl_url": "http://vesg.ipsl.upmc.fr/thredds/fileServer/cmip6/C4MIP/IPSL/IPSL-CM6A-LR/1pctCO2-bgc/r1i1p1f1/Amon/clw/gr/v20180914/clw_Amon_IPSL-CM6A-LR_1pctCO2-bgc_r1i1p1f1_gr_185001-199912.nc"
     }
 ]
